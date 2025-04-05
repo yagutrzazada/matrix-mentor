@@ -13,16 +13,15 @@ import java.util.Objects;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "Employee")
+//@Table(name = "employee")
 public class EmployeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long  id;
     private String name;
-    @Column(name = "last_name")
     private String surName;
-    private Long fin;
-    private int age;
+    private String fin;
+    private Integer age;
     private LocalDate birthDate;
     private String phoneNumber;
     private String email;

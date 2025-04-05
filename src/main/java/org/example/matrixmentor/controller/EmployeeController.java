@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.example.matrixmentor.model.EmployeeDto;
 import org.example.matrixmentor.service.EmployeeService;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/employees")
 @RequiredArgsConstructor
-public class EmployeeContorller {
+public class EmployeeController {
     public final EmployeeService employeeService;
 
     @PostMapping
@@ -24,6 +23,7 @@ public class EmployeeContorller {
     }
 
     @GetMapping("/{id}")
+    //getEmployee
     public EmployeeDto findEmployee(@PathVariable Long id) {
         return employeeService.findEmployeeById(id);
 
