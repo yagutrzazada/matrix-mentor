@@ -23,10 +23,9 @@ public class EmployeeService {
 
     public void createEmployee(EmployeeDto employeeDto) {
         EmployeeEntity entity = EmployeeMapper.Instance.toEmployeeEntity(employeeDto);
-        System.out.println(entity);
         employeeRepository.save(entity);
     }
-
+//errormessage islet
     public EmployeeDto findEmployeeById(Long id) {
         var employeeEntity = employeeRepository.findById(id).orElseThrow(() ->  new NotFoundException("cant find id "));
         return EmployeeMapper.Instance.toEmployeeDto(employeeEntity);
@@ -42,11 +41,11 @@ public class EmployeeService {
 
     public void updateEmployee(Long id, EmployeeDto dto) {
         EmployeeEntity entity = employeeRepository.findById(id).orElseThrow(() ->
-                new RuntimeException(String.format(ErrorMessage.EMPLOYEE_NOT_FOUND.getMessage())));
+                //id elave et
+                new RuntimeException(String.format(ErrorMessage.EMPLOYEE_NOT_FOUND.getMessage(),id)));
         EmployeeMapper.Instance.toEmployeeDto(entity);
         employeeRepository.save(entity);
     }
-
 
     public void deleteEmployee(Long id) {
             employeeRepository.deleteById(id);

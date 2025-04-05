@@ -9,6 +9,7 @@ import java.util.Map;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+//class adin deyis
 public class ErrorEntity {
     private String message;
     private String code;

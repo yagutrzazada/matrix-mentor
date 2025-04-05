@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-employee-table
+      author: yagutrzazada
+      changes:
+        - createTable:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(64)
+              - column:
+                  name: sur_name
+                  type: VARCHAR(128)
+              - column:
+                  name: fin
+                  type: VARCHAR(16)
+              - column:
+                  name: age
+                  type: INT
+              - column:
+                  name: birth_date
+                  type: DATE
+              - column:
+                  name: phone_number
+                  type: VARCHAR(32)
+              - column:
+                  name: email
+                  type: VARCHAR(128)

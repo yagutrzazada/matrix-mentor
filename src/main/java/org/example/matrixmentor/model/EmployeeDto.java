@@ -11,6 +11,7 @@ import java.util.Objects;
 
 @NoArgsConstructor
 @AllArgsConstructor
+//data islet
 @Getter
 @Setter
 @ToString
@@ -22,6 +23,7 @@ public class EmployeeDto {
     @NotNull(message = "Fin must not be null")
     private Long fin;
     private int age;
+
     private LocalDate birthDate;
     private String phoneNumber;
     @Email(message = "Email should be valid")

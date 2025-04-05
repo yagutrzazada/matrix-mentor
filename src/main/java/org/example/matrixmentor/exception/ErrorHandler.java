@@ -14,7 +14,7 @@ public class ErrorHandler {
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<ErrorEntity> handle(NotFoundException exception) {
         return ResponseEntity.status(404).
-                body(new ErrorEntity(exception.getMessage(), ErrorMessage.EMPLOYEE_NOT_FOUND.getMessage(), null));
+                body(new ErrorEntity(exception.getMessage(), ErrorMessage.EMPLOYEE_NOT_FOUND.name(), null));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -24,6 +24,6 @@ public class ErrorHandler {
                 fieldError -> validationErrors.put(fieldError.getField(), fieldError.getDefaultMessage())
         );
         return ResponseEntity.status(400).
-                body((new ErrorEntity(e.getFieldError().getDefaultMessage(), ErrorMessage.VALIDATION_ERROR.getMessage(), null)));
+                body((new ErrorEntity(e.getFieldError().getDefaultMessage(), ErrorMessage.VALIDATION_ERROR.name(), null)));
     }
 }

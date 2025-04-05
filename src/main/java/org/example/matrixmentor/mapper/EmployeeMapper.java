@@ -6,7 +6,7 @@ import org.example.matrixmentor.model.EmployeeDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper(componentModel = "spring")//
+@Mapper()//componentModel = "spring")
 public interface EmployeeMapper {
     EmployeeMapper Instance= Mappers.getMapper(EmployeeMapper.class);
     EmployeeEntity toEmployeeEntity(EmployeeDto employeeDto);
